@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import './Pomodoro.css'
 
 export class Pomodoro extends Component {
@@ -90,20 +90,20 @@ export class Pomodoro extends Component {
     render() {
         return (
             <div className='pomodoro'>
-                <div className="pomodoro__title">{this.props.taskName}</div>
+                <h2 className="pomodoro__title">{this.props.taskName}</h2>
                 <div className="pomodoro__clock">
-                    <div className="pomodoro__clock__text">{this.state.minutes}:
-                        <span className="pomodoro__clock__text__small">{this.state.seconds}</span>
+                    <div className="pomodoro__clock__text">{this.state.minutes}
+                        <span className="pomodoro__clock__text__small">{`: ${this.state.seconds}`}</span>
                     </div>
                 </div>
                 <div className="pomodoro__actions">
                     {
                         !this.state.isPaused
                             ? <button className="btn" onPointerDown={this.handlePause}>Pause</button>
-                            : <Fragment>
+                            : <div className="pomodoro__actions--updated">
                                 <button className="btn" onPointerDown={this.handleRestart}>Restart</button>
                                 <button className="btn" onPointerDown={this.props.onStop}>Stop</button>
-                            </Fragment>
+                            </div>
                     }
 
                 </div>
