@@ -24,6 +24,7 @@ class Home extends Component {
 
   render() {
 
+    const { task, work, lunch, renderPomodoro } = this.state
     // renders home component
     let renderView = (
       <div className='home'>
@@ -36,7 +37,7 @@ class Home extends Component {
           <input className='home__input-group__input' name='work' onChange={this.handleInput} type="text" />
         </div>
         <div className='home__input-group'>
-          <label className='home__input-group__label' htmlFor="break-time">Time for break (in minutes):</label>
+          <label className='home__input-group__label' htmlFor="lunch-time">Time for break (in minutes):</label>
           <input className='home__input-group__input' name='lunch' onChange={this.handleInput} type="text" />
         </div>
         <button className='home__submit btn' onPointerDown={this.togglePomodoro}>Submit</button>
@@ -44,8 +45,8 @@ class Home extends Component {
     )
 
     // renders pomodoro component if state.renderPomodoro is true
-    if (this.state.renderPomodoro) {
-      renderView = <Pomodoro onStop={this.togglePomodoro} />
+    if (renderPomodoro) {
+      renderView = <Pomodoro taskName={task} lunchTime={lunch} workTime={work} onStop={ this.togglePomodoro } />
     }
 
     return renderView
