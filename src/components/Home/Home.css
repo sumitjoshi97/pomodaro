@@ -1,0 +1,29 @@
+.home {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw; }
+  .home__input-group {
+    width: inherit;
+    margin-bottom: 4rem; }
+    .home__input-group__label {
+      display: block;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      margin-left: 1rem; }
+    .home__input-group__input {
+      width: inherit;
+      font-family: 'Open Sans', sans-serif;
+      padding: 1rem 1.8rem;
+      font-size: 1.8rem;
+      border: none;
+      border-radius: 50px; }
+      .home__input-group__input:focus, .home__input-group__input:active {
+        outline: none;
+        box-shadow: 0rem 0rem 4rem rgba(119, 38, 33, 0.8); }
+  .home__submit {
+    font-size: 1.8rem;
+    margin-top: 4rem;
+    margin-left: 50%;
+    transform: translateX(-50%); }
