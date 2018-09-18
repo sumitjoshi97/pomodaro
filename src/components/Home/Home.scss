@@ -1,0 +1,40 @@
+@import '../../sass/variable.scss';
+
+.home {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    &__input-group {
+        width: inherit;
+        margin-bottom: $margin-large;
+        &__label {
+            display: block;
+            color: $color-white;
+            margin-bottom: $margin-small;
+            margin-left: $margin-mid;
+        }
+        
+        &__input {
+            width: inherit;
+            font-family: 'Open Sans', sans-serif;
+            padding: 1rem 1.8rem;
+            font-size: $font-secondary;
+            border: none;
+            border-radius: 50px;
+
+            &:focus, &:active {
+                outline: none;
+                box-shadow: 0rem 0rem 4rem rgba($color-red, 0.8);
+            }
+        }
+    }
+
+    &__submit {
+        font-size: $font-secondary;
+        margin-top: $margin-large;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+}

@@ -1,0 +1,44 @@
+@import './sass/variable.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: $base-font;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+// utility classes
+
+
+//component classes
+
+.btn {
+    font-size: $font-secondary;
+    font-family: 'Open Sans', sans-serif;
+    padding: 1rem 4rem;
+    background-color: $color-white;
+    color: $color-black;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 0 4rem rgba($color-red, 0.8);
+        transform: translate(-50%, -0.2rem);
+    }
+
+    &:focus, &:active {
+        outline: none;
+        transform: translate(-50%, 0);
+    } 
+}

@@ -1,0 +1,6 @@
+@import './sass/variable.scss';
+
+.App {
+    height: 100vh;
+    background-image: linear-gradient(to bottom, $color-primary, $color-secondary);
+}
