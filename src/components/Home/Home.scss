@@ -36,5 +36,13 @@
         margin-top: $margin-large;
         margin-left: 50%;
         transform: translateX(-50%);
+
+        &:hover{
+            transform: translate(-50%, -0.2rem);
+        }
+
+        &:focus, &:active {
+            transform: translate(-50%, 0);
+        }
     }
 }

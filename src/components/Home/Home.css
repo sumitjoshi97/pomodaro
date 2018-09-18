@@ -27,3 +27,7 @@
     margin-top: 4rem;
     margin-left: 50%;
     transform: translateX(-50%); }
+    .home__submit:hover {
+      transform: translate(-50%, -0.2rem); }
+    .home__submit:focus, .home__submit:active {
+      transform: translate(-50%, 0); }

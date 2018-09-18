@@ -34,11 +34,9 @@ body {
 
     &:hover {
         box-shadow: 0 0 4rem rgba($color-red, 0.8);
-        transform: translate(-50%, -0.2rem);
     }
 
     &:focus, &:active {
         outline: none;
-        transform: translate(-50%, 0);
     } 
 }
