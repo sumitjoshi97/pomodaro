@@ -1,17 +1,24 @@
 import React, { Component } from 'react'
 import './Pomodoro.css'
+import soundFile from '../../assets/alarm.mp3';
 
 export class Pomodoro extends Component {
 
     // state 
-    state = {
-        mode: 'work',
-        minutes: this.props.workTime,
-        seconds: 0,
-        isTimerStart: true,
-        isPaused: false,
-        isTimerOver: false
+    constructor(props) {
+        super(props)
+        this.state = {
+            mode: 'work',
+            minutes: this.props.workTime,
+            seconds: 0,
+            isTimerStart: true,
+            isPaused: false,
+            isTimerOver: false
+        }
+
+        this.alarm = new Audio(soundFile)
     }
+    
 
     componentDidMount() {
         // starting timer as soon as <Pomodoro/> component mounts
@@ -26,8 +33,9 @@ export class Pomodoro extends Component {
 
         // check if timer is not running
         if (isTimerOver) {
+            this.alarm.play()
             alert(`${mode} time is over`)
-
+            this.stopAlarm()
             // set mode to lunch if mode == 'work' and vice-versa, satrt and respective timer
             if (mode === 'work') {
                 this.setState(() => ({
@@ -67,6 +75,8 @@ export class Pomodoro extends Component {
         }
     }
 
+    
+
     // function to pause the timer
     handlePause = () => {
         this.setState(() => ({
@@ -87,9 +97,16 @@ export class Pomodoro extends Component {
         }))
     }
 
+    // stop the alarm ringtone - pause it and set the seek to start of track
+    stopAlarm = () => {
+        this.alarm.pause()
+        this.alarm.currentTime = 0
+    }
+
     render() {
         return (
             <div className='pomodoro'>
+                {/* <audio ref={alarm => this.alarm = alarm} src={require('../../assets/alarm.mp3')}></audio> */}
                 <h2 className="pomodoro__title">{this.props.taskName}</h2>
                 <div className="pomodoro__clock">
                     <div className="pomodoro__clock__text">{this.state.minutes}
